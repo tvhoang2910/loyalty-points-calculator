@@ -184,4 +184,29 @@ public class LoyaltyPointsCalculatorTest {
         // purchaseCount = 5 → Tier1 nếu đủ tiền
         assertEquals(100, calculator.calculatePoints(5_500_000, 5));
     }
+
+    // ===================================================================
+    // 🔹 PHẦN 3: KIỂM THỬ DÒNG ĐIỀU KHIỂN (C2)
+    // ===================================================================
+
+    @Test
+    void testPath_C2_TC1() {
+        assertEquals(100, calculator.calculatePoints(6_000_000, 10));
+    }
+
+    @Test
+    void testPath_C2_TC2() {
+        assertEquals(70, calculator.calculatePoints(4_000_000, 4));
+    }
+
+    @Test
+    void testPath_C2_TC3() {
+        assertEquals(40, calculator.calculatePoints(2_000_000, 3));
+    }
+
+    @Test
+    void testPath_C2_TC4() {
+        assertEquals(0, calculator.calculatePoints(500_000, 1));
+    }
+
 }
