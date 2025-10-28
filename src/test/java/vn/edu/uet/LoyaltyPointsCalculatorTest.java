@@ -209,4 +209,28 @@ public class LoyaltyPointsCalculatorTest {
         assertEquals(0, calculator.calculatePoints(500_000, 1));
     }
 
+    // ===================================================================
+    // 🔹 PHẦN 4: All-uses tests
+    // ===================================================================
+
+    @Test
+    void testAllUses_TotalSpent_Tuple1_AtTier1_HighCount() {
+        assertEquals(100, calculator.calculatePoints(5_000_000, 5));
+    }
+
+    @Test
+    void testAllUses_TotalSpent_Tuple2_AtTier2_LowCount() {
+        assertEquals(40, calculator.calculatePoints(3_000_000, 2));
+    }
+
+    @Test
+    void testAllUses_TotalSpent_Tuple3_AtTier3_LowCount() {
+        assertEquals(40, calculator.calculatePoints(1_000_000, 2));
+    }
+
+    @Test
+    void testAllUses_PurchaseCount_Tuple_NoCount() {
+        assertEquals(0, calculator.calculatePoints(500_000, 1));
+    }
+
 }
